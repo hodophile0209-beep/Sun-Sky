@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#C7E4FA">
+  <title>Sun &amp; Sky ☀️</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .add-photo-btn{display:block;text-align:center;background:#FFD43B;color:#1F3A8A;font-weight:700;padding:14px;border-radius:16px;cursor:pointer;margin:6px 0 12px}
+    .add-photo-btn input{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden}
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <a href="#" class="brand">
+      <span class="brand-icon">☀️</span>
+      <span>sun &amp; sky<span class="brand-dot">.</span></span>
+    </a>
+    <button class="profile-btn" id="profileBtn" aria-label="Profile">♡</button>
+  </header>
+
+  <main>
+    <section class="welcome">
+      <span class="eyebrow">YOUR LITTLE TIME CAPSULE ✨</span>
+      <h1>Collect moments,<br>not just <span>days.</span></h1>
+      <p>Every date holds a little piece of your story.</p>
+    </section>
+
+    <section class="calendar-card">
+      <div class="calendar-heading">
+        <button id="prevMonth" class="arrow" aria-label="Previous month">‹</button>
+        <div>
+          <h2 id="monthTitle">October 2026</h2>
+          <p id="monthSubtitle">A month full of possibilities</p>
+        </div>
+        <button id="nextMonth" class="arrow" aria-label="Next month">›</button>
+      </div>
+
+      <div class="weekdays">
+        <span>Mo</span><span>Tu</span><span>We</span>
+        <span>Th</span><span>Fr</span><span>Sa</span><span>Su</span>
+      </div>
+
+      <div id="calendarGrid" class="calendar-grid"></div>
+
+      <div class="legend">
+        <span class="legend-dot"></span>
+        Little memories live here
+      </div>
+    </section>
+
+    <section class="memory-section">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">YOUR COLLECTION</span>
+          <h2>Little moments ♡</h2>
+        </div>
+        <span id="memoryCount" class="count">0 memories</span>
+      </div>
+
+      <div id="memoryList" class="memory-list"></div>
+    </section>
+
+    <footer>
+      <span>made of sunshine &amp; memories</span>
+      <span>☀️ ♡ ☁️</span>
+    </footer>
+  </main>
+
+  <dialog id="memoryDialog" class="memory-dialog">
+    <form method="dialog">
+      <button class="close-btn" aria-label="Close">×</button>
+    </form>
+
+    <span class="eyebrow">A LITTLE PIECE OF TIME</span>
+    <h2 id="selectedDateTitle">Your memories ♡</h2>
+    <p id="selectedDateSubtitle" class="dialog-subtitle"></p>
+
+    <div id="photoGrid" class="photo-grid"></div>
+
+    <label class="add-photo-btn">
+      ＋ Add photos
+      <input id="photoInput" type="file" accept="image/*" multiple>
+    </label>
+
+    <p id="saveStatus" role="status" aria-live="polite"></p>
+
+    <form id="memoryForm" class="memory-form">
+      <label for="memoryCaption">A little note (optional)</label>
+      <textarea id="memoryCaption" placeholder="What made this day special?"></textarea>
+      <button class="primary-btn" type="submit">Save note ☀️</button>
+    </form>
+    <p class="privacy-note">🔒 Demo version: memories are saved on this device only.</p>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
